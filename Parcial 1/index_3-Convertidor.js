@@ -95,16 +95,16 @@ const ConvertirUnidadesHandler = {
             }
         }
         if (!resultado) {
-          resultado = requestAttributes.t('ERROR_UNIT');;
+          speakOutput = requestAttributes.t('ERROR_UNIT');;
         }
-        speakOutput = valor + ' ' + unidadOrigen + ' ' + text + ' ' +resultado + ' ' + unidadDestino;
+        speakOutput = `${valor} ${unidadOrigen} ${text} ${resultado.toFixed(2)} ${unidadDestino}`;
     }else{
         speakOutput = requestAttributes.t('ERROR_CONVERTION');;
     }
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
-      .withShouldEndSession(false) // Mantiene la sesión abierta ya que se llega a cerrar
+      .reprompt(speakOutput)
       .getResponse();
   }
 };
