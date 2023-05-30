@@ -90,8 +90,7 @@ const CustomCalcularAreaIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
-    //   Evita que la sesion se cierre y dejen de funcionar los comandos como help, stop
-      .withShouldEndSession(false)
+      .reprompt(speakOutput)
       .getResponse();
   },
 };
@@ -109,7 +108,6 @@ const HelpIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speakHelp)
             .reprompt(speakHelp)
-            .withShouldEndSession(false)
             .getResponse();
     }
 };
@@ -126,7 +124,6 @@ const CancelAndStopIntentHandler = {
         
         return handlerInput.responseBuilder
             .speak(speakCancel)
-            .withShouldEndSession(true)
             .getResponse();
     }
 };
@@ -184,12 +181,10 @@ const ErrorHandler = {
         return handlerInput.responseBuilder
             .speak(speakFallback)
             .reprompt(speakFallback)
-            .withShouldEndSession(false)
             .getResponse();
     }
 };
 
-// FUNCIONES PARA SABER EL IDIOMA
 const LoggingRequestInterceptor = {
     process(handlerInput){
         console.log(`Incoming request: ${JSON.stringify(handlerInput.requestEnvelope.request)}`);
