@@ -140,7 +140,6 @@ const FallbackIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speakFallback)
             .reprompt(speakFallback)
-            .withShouldEndSession(false)
             .getResponse();
     }
 };
