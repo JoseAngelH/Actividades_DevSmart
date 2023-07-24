@@ -1,0 +1,271 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "nombre",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.668465996269.462109561410"
+              }
+            },
+            {
+              "name": "edad",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isGreaterThan",
+                  "prompt": "Slot.Validation.668465996269.976538304447.63767102792",
+                  "value": "14"
+                },
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.668465996269.976538304447.578388552391",
+                  "value": "60"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.668465996269.976538304447"
+              }
+            },
+            {
+              "name": "altura",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.668465996269.1267887985233.1226310050050",
+                  "value": "1.2"
+                },
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.668465996269.1267887985233.466620311957",
+                  "value": "2.0"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.668465996269.1267887985233"
+              }
+            },
+            {
+              "name": "peso",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.668465996269.241846041938.771122027241",
+                  "value": "30"
+                },
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.668465996269.241846041938.50303933023",
+                  "value": "150"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.668465996269.241846041938"
+              }
+            }
+          ],
+          "name": "registerInfo",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "thanks",
+            "stop"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "recomendacionIntent",
+          "samples": [
+            "recommends",
+            "continue",
+            "recommend me something",
+            "give me a recommendation",
+            "next"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "nombre",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{nombre}"
+              ]
+            },
+            {
+              "name": "edad",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{edad}"
+              ]
+            },
+            {
+              "name": "altura",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{altura}"
+              ]
+            },
+            {
+              "name": "peso",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{peso}"
+              ]
+            }
+          ],
+          "name": "registerInfo",
+          "samples": [
+            "weight {peso} kg",
+            "i measure {altura} m",
+            "i am {edad} years old",
+            "{edad} years old",
+            "i am {nombre}",
+            "my name is {nombre}",
+            "register me",
+            "register my information",
+            "update my information"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "marcoLegalInent",
+          "samples": [
+            "what about my information",
+            "next point",
+            "see legal framework"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "healthy life"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is your name?"
+          }
+        ],
+        "id": "Elicit.Slot.668465996269.462109561410"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok {nombre} , how old are you?"
+          }
+        ],
+        "id": "Elicit.Slot.668465996269.976538304447"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t think you\u0027re that young"
+          }
+        ],
+        "id": "Slot.Validation.668465996269.976538304447.63767102792"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t think you\u0027re that old"
+          }
+        ],
+        "id": "Slot.Validation.668465996269.976538304447.578388552391"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please {nombre} tell me how tall you are in meters"
+          }
+        ],
+        "id": "Elicit.Slot.668465996269.1267887985233"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t think you\u0027re that short"
+          }
+        ],
+        "id": "Slot.Validation.668465996269.1267887985233.1226310050050"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t think you\u0027re that tall"
+          }
+        ],
+        "id": "Slot.Validation.668465996269.1267887985233.466620311957"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Now tell me how much you weigh, in kilograms"
+          }
+        ],
+        "id": "Elicit.Slot.668465996269.241846041938"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t think you weigh so little"
+          }
+        ],
+        "id": "Slot.Validation.668465996269.241846041938.771122027241"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I don\u0027t think you weigh that much"
+          }
+        ],
+        "id": "Slot.Validation.668465996269.241846041938.50303933023"
+      }
+    ]
+  }
+}
