@@ -587,7 +587,7 @@ const savePreferenciasIntenHandler = {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         let speakOutput = '';
-        if(cuarto.length){
+        if(cuarto !== null){
             try{
                 preferencias.push(cuarto);
                 sessionAttributes['preferencias'] = preferencias;
