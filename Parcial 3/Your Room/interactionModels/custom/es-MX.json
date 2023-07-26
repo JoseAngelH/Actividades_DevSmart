@@ -1,0 +1,356 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.760576004759.881462790307"
+              }
+            }
+          ],
+          "name": "searchIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.561132145246.1356276901005"
+              }
+            },
+            {
+              "name": "condicion",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.561132145246.987642476239"
+              }
+            },
+            {
+              "name": "precio",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.561132145246.527856769351"
+              }
+            }
+          ],
+          "name": "searchPriceIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1576817867840.130647643772"
+              }
+            },
+            {
+              "name": "compania",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1576817867840.1192413367244"
+              }
+            }
+          ],
+          "name": "searchCompanyIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1203376088256.769302360866"
+              }
+            },
+            {
+              "name": "inmueble",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1203376088256.1127795142595"
+              }
+            }
+          ],
+          "name": "searchTypeIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "que puedes hacer",
+            "ayuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "gracias",
+            "adios",
+            "para",
+            "detente"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{zona}"
+              ]
+            }
+          ],
+          "name": "searchIntent",
+          "samples": [
+            "cuartos en {zona}",
+            "cuartos en el {zona}",
+            "buscar por zona",
+            "que cuartos hay disponibles en {zona}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "viewRoom",
+          "samples": [
+            "muestra la siguiente",
+            "siguiente",
+            "muestrame una habitacion",
+            "muestrame un cuarto"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "savePreferences",
+          "samples": [
+            "guarda esta habitacion",
+            "guarda este cuarto"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "viewPreferences",
+          "samples": [
+            "siguiente preferencia",
+            "ver preferencias"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "deletePreferences",
+          "samples": [
+            "elimina mis preferencias"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{zona}"
+              ]
+            },
+            {
+              "name": "condicion",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{condicion}"
+              ]
+            },
+            {
+              "name": "precio",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{precio}"
+              ]
+            }
+          ],
+          "name": "searchPriceIntent",
+          "samples": [
+            "buscar por precio",
+            "busca por precio"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{zona}"
+              ]
+            },
+            {
+              "name": "compania",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{compania}"
+              ]
+            }
+          ],
+          "name": "searchCompanyIntent",
+          "samples": [
+            "busca por compañia",
+            "busca por compania",
+            "buscar por compañia",
+            "buscar por compania"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "zona",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{zona}"
+              ]
+            },
+            {
+              "name": "inmueble",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{inmueble}"
+              ]
+            }
+          ],
+          "name": "searchTypeIntent",
+          "samples": [
+            "busca por tipo de cuarto",
+            "buscar por tipo de cuarto",
+            "buscar por tipo",
+            "busca por tipo",
+            "buscar por tipo de inmueble",
+            "busca por tipo de inmueble"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "marcoLegalIntent",
+          "samples": [
+            "siguiente punto",
+            "ver politicas",
+            "marco legal",
+            "ver marco legal"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "your room"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok, dime la zona que deseas"
+          }
+        ],
+        "id": "Elicit.Slot.760576004759.881462790307"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok, dime en que zona deseas buscar"
+          }
+        ],
+        "id": "Elicit.Slot.561132145246.1356276901005"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Dime la condición de la busqueda, menor o mayor"
+          }
+        ],
+        "id": "Elicit.Slot.561132145246.987642476239"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok, ahora dime el precio"
+          }
+        ],
+        "id": "Elicit.Slot.561132145246.527856769351"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok, dime la zona que deseas"
+          }
+        ],
+        "id": "Elicit.Slot.1576817867840.130647643772"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok, ahora dime el tipo de compañia, individual o compartido"
+          }
+        ],
+        "id": "Elicit.Slot.1576817867840.1192413367244"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ok, dime la zona que deseas"
+          }
+        ],
+        "id": "Elicit.Slot.1203376088256.769302360866"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "ahora dime que tipo de inmueble deseas, piso o cuarto"
+          }
+        ],
+        "id": "Elicit.Slot.1203376088256.1127795142595"
+      }
+    ]
+  }
+}
